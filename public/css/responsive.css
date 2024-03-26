@@ -1,0 +1,59 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    #blockCar {
+        flex-direction: column;
+    }
+    #infoContainer {
+
+        flex-direction:column-reverse;
+        width: 95%;
+      
+    }
+    #wrapper{
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        flex-direction: column;
+        border: none;
+    }
+    #heroImg {
+        margin-left: 1px;
+        width: 120%;
+    }
+    
+    .blockInformation {
+        width: 95%;
+    }
+    .reviews {
+        width: 95%;
+    }
+    body {
+        flex-direction: column;
+        background-image: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+
+}
