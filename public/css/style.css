@@ -241,3 +241,43 @@ info Container
   font-size: 2rem;
   font-weight: bold;
 }
+
+/*
+Detail vehicle card
+*/
+#vehicle-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+}
+.vehicle-block {
+  width: 45%;
+}
+.vehicle-block h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.vehicle-block img {
+  width: 95%;
+}
+.price-block {
+  background-color: whitesmoke;
+  padding: 0.5px;
+
+}
+.price-block p b, .price-block p, .price-block span {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding-left: 10px;
+}
+.vehicle-block p b {
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+.vehicle-block p  {
+  font-size: 1.3rem;
+}
