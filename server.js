@@ -6,6 +6,7 @@ const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config()
 const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute");
+const detailRoute = require("./routes/detailRoute");
 
 
 //Controllers
@@ -25,6 +26,7 @@ app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
 app.use(static);
 app.use("/inv", inventoryRoute);
+app.use("/inv/detail", detailRoute);
 
 //inventory routes
 app.get("/", baseController.buildHome);

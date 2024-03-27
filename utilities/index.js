@@ -77,4 +77,42 @@ Util.buildClassificationGrid = async function (data) {
   return grid;
 };
 
+/* **************************************
+ * Build the vehicle detail view HTML
+ * ************************************ */
+Util.buildVehicleCard = async function (data) {
+  let card;
+  if (data) {
+    card = '<div id="vehicle-display">';
+    
+      card+= '<div class="vehicle-block">';
+        card+= '<img src="'+ data.inv_thumbnail +'" alt="Image of ' +
+        data.inv_make +
+        " " +
+        data.inv_model +
+        ' on CSE Motors" />';
+
+      card+= '</div>';
+
+      card+= '<div class="vehicle-block">';
+        card+= '<h2>'+ data.inv_model + ' Details </h2>';
+        card+= '<div class="price-block">';
+          card+= '<p><b>Price: ' + data.inv_price +'</b></p>';
+        card+= '</div>';
+        card+= '<p><b>Description: </b>'+ data.inv_description +'</p>';
+        card+= '<div class="price-block">';
+          card+= '<p><b>Color:</b> ' + data.inv_color +'</p>';
+        card+= '</div>';
+        card+= '<p><b>Miles: </b>'+ data.inv_miles+'</p>';
+      card+= '</div>';
+
+    card += "</div>";
+  } else {
+    card += '<p class="notice">Sorry, no matching vehicles could be found.</p>';
+  }
+  return card;
+};
+
 module.exports = Util;
+
+
