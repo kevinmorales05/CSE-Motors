@@ -5,6 +5,11 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config()
 const static = require("./routes/static")
+const inventoryRoute = require("./routes/inventoryRoute");
+
+
+//Controllers
+const baseController = require("./controllers/baseController");
 
 /* ******************************************
  * Server host name and port
@@ -19,18 +24,15 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
 app.use(static);
+app.use("/inv", inventoryRoute);
 
-
+//inventory routes
+app.get("/", baseController.buildHome);
 
 /* ******************************************
  * Default GET route
  * ***************************************** */
-app.get("/", (req, res) => {
-    res.render("index", {
-        title: "Home"
-    });
-    //res.send("Welcome home!");
-})
+
 
 /* ***********************
 * Log statement to confirm server operation
