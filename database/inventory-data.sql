@@ -1,3 +1,12 @@
+-- Data for table `classification`
+INSERT INTO public.classification (classification_name)
+	VALUES ('Custum'),
+	('Sport'),
+	('SUV'),
+	('Truck'),
+	('Sedan');
+	
+
 -- Data for table `inventory`
 
 INSERT INTO public.inventory (
