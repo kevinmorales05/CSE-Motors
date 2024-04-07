@@ -18,6 +18,7 @@ invCont.buildByVehiculeId = async function (req, res, next) {
     title: year + " " + brand + " " + vehicleName,
     nav,
     vehicleDetail,
+    errors: null,
   })
 }
 

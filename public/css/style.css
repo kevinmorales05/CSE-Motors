@@ -281,3 +281,18 @@ Detail vehicle card
 .vehicle-block p  {
   font-size: 1.3rem;
 }
+
+
+/*
+Validations
+*/
+input:required:invalid, input:focus:invalid {
+  background-image: url(../images/site/);
+  background-position: right top;
+  background-repeat: no-repeat;
+ }
+  input:required:valid {
+  background-image: url(/images/valid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  }
