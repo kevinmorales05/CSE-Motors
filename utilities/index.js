@@ -115,9 +115,83 @@ Util.buildVehicleCard = async function (data) {
   return card;
 };
 
+Util.buildInventoryAdd = async function () {
+  let block;
+  block += '<ul id="inventory-options"></ul>'
+  block += '<li><a href="/inv/addClassification" >Add New Classification</a></li>'
+  block += '<li><a href="/inv/newVehicle" >Add New Vehicle</a></li>'
+  block += '</ul>'
+  return block;
+}
+
+Util.buildInventoryAddVehicle = async function () {
+  
+  let data = await invModel.getClassifications();
+  let classification_id = null;
+  console.log('data from build ', data.rows)
+    let classificationList =
+      '<select name="classification_id" id="classificationList" required>'
+    classificationList += "<option value=''>Choose a Classification</option>"
+    data.rows.forEach((row) => {
+      classificationList += '<option value="' + row.classification_id + '"'
+      if (
+        classification_id != null &&
+        row.classification_id == classification_id
+      ) {
+        classificationList += " selected "
+      }
+      classificationList += ">" + row.classification_name + "</option>"
+    })
+    classificationList += "</select>"
+
+  let block = '<form action="/inv/addVehicle" method="POST">';
+  
+  block += '<label for="classification_id">Classification:</label>';
+  block += classificationList + '<br><br/>';
+  block += '<label for="inv_make">Make:</label>';
+  block += '<input type="text" id="inv_make" name="inv_make" required placeholder="Min of 3 characters"><br>';
+
+  block += '<label for="inv_model">Model:</label>';
+  block += '<input type="text" id="inv_model" name="inv_model" placeholder="Min of 3 characters" required><br>';
+
+  block += '<label for="inv_description">Description:</label>';
+  block += '<textarea id="inv_description" name="inv_description" required></textarea><br>';
+
+  block += '<label for="inv_image">Image Path:</label>';
+  block += '<input type="text" id="inv_image" name="inv_image" value="/images/vehicles/no-image.png" required><br>';
+
+  block += '<label for="inv_thumbnail">Thumbnail Path:</label>';
+  block += '<input type="text" id="inv_thumbnail" name="inv_thumbnail" value="/images/vehicles/no-image.png" required><br>';
+
+  block += '<label for="inv_price">Price:</label>';
+  block += '<input type="number" id="inv_price" name="inv_price" placeholder="Decimal or integer" required><br>';
+
+  block += '<label for="inv_year">Year:</label>';
+  block += '<input type="number" id="inv_year" name="inv_year" placeholder="4-digit year" required><br>';
+
+  block += '<label for="inv_miles">Miles:</label>';
+  block += '<input type="number" id="inv_miles" name="inv_miles" placeholder="digits only" required><br>';
+
+  block += '<label for="inv_color">Color:</label>';
+  block += '<input type="text" id="inv_color" name="inv_color" required><br>';
+
+  block += '<button type="submit">Add vehicle</button>';
+  block += '</form>';
+
+  return block;
+}
+
+Util.buildInventoryAddClassification = async function () {
+  let block = '<form action="/inv/addClassification" method="POST">';
+  block += '<label for="classification_name">Classification Name:</label>';
+  block += '<p>NAME MUST BE ALPHABETIC CHARACTERS ONLY.</p>';
+  block += '<input type="text" id="classification_name" name="classification_name" required>';
+  block += '<button type="submit">Add classification</button>';
+  block += '</form>';
+  return block;
+}
+
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 
 module.exports = Util;
-
-
