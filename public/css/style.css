@@ -296,3 +296,145 @@ input:required:invalid, input:focus:invalid {
   background-position: right top;
   background-repeat: no-repeat;
   }
+
+  /*
+  Login container
+  */
+
+  .login-container {
+    background-color: skyblue;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .login-container h2 {
+    font-size: 1.2rem;
+  }
+  #login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    width: 80%;
+    border: white solid 1px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: skyblue;
+    margin-top: 10px;
+    padding-top: 10px;
+    align-items: flex-start;
+
+  }
+  
+  #login-form button {
+    width: 40%;
+    align-self: flex-start;
+
+  }
+  #showpwd {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+  }
+
+   /*
+  Register container
+  */
+
+  .register-container {
+    background-color: skyblue;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #register-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    width: 80%;
+    border: white solid 1px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: skyblue;
+    margin-top: 10px;
+    padding-top: 10px;
+    align-items: flex-start;
+
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #account_password {
+    width: 60%;
+    align-self: flex-start;
+  }
+  
+  #inventory-options li {
+    list-style: none;
+  }
+
+  /*
+    Add classification
+  */
+.blockAddClass {
+ display: flex;
+ background-color: skyblue;
+ width: 30%;
+ border-radius: 10px;
+ margin: 0 auto;
+ padding: 10px;
+
+}
+
+.blockAddClassForm {
+  border: white solid 1px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.blockAddClassForm p {
+  text-transform: uppercase; 
+  font-style: italic; 
+  
+}
+
+/*
+    Add vehicle
+  */
+  .blockAddClass {
+    display: flex;
+    background-color: skyblue;
+    width: 30%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 10px;
+   
+   }
+   
+   .blockAddClassForm {
+     border: white solid 1px;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     margin: 0 auto;
+   }
+   .blockAddClassForm p {
+     text-transform: uppercase; 
+     font-style: italic; 
+     
+   }

@@ -6,7 +6,7 @@ const Util = {};
  ************************** */
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
-  let list = "<ul>";
+  let list = "<ul id='build-inventory'>";
   list += '<li><a href="/" title="Home page">Home</a></li>';
   data.rows.forEach((row) => {
     list += "<li>";
@@ -144,8 +144,8 @@ Util.buildInventoryAddVehicle = async function () {
     })
     classificationList += "</select>"
 
-  let block = '<form action="/inv/addVehicle" method="POST">';
-  
+  let block = '<div class="blockAddClass" >';
+  block += '<form class="blockAddClassForm" action="/inv/addVehicle" method="POST">';
   block += '<label for="classification_id">Classification:</label>';
   block += classificationList + '<br><br/>';
   block += '<label for="inv_make">Make:</label>';
@@ -182,12 +182,14 @@ Util.buildInventoryAddVehicle = async function () {
 }
 
 Util.buildInventoryAddClassification = async function () {
-  let block = '<form action="/inv/addClassification" method="POST">';
+  let block = '<div  class="blockAddClass" >';
+  block += '<form class="blockAddClassForm" action="/inv/addClassification" method="POST">';
   block += '<label for="classification_name">Classification Name:</label>';
   block += '<p>NAME MUST BE ALPHABETIC CHARACTERS ONLY.</p>';
   block += '<input type="text" id="classification_name" name="classification_name" required>';
   block += '<button type="submit">Add classification</button>';
   block += '</form>';
+  block += '</div>';
   return block;
 }
 

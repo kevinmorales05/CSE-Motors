@@ -37,6 +37,10 @@
   .vehicle-block {
     width: 90%;
   }
+  .blockAddClass {
+    width: 90%;
+   }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -93,6 +97,7 @@
   .vehicle-block {
     width: 45%;
   }
+  
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
