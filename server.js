@@ -12,6 +12,9 @@ const detailRoute = require("./routes/detailRoute");
 const accountRoute = require("./routes/accountRoute");
 const bodyParser = require("body-parser");
 const utilities = require("./utilities/");
+const cookieParser = require("cookie-parser");
+
+
 
 
 //Controllers
@@ -50,6 +53,10 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+//cookies for login
+app.use(cookieParser());
+//utilities for jwt
+app.use(utilities.checkJWTToken)
 
 app.set("view engine", "ejs")
 app.use(expressLayouts)

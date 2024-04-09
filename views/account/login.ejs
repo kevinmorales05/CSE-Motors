@@ -1,14 +1,14 @@
 <div class="login-container">
-    <form id="login-form">
+    <form id="login-form" action="/account/login" method="post" >
         <div class="form-group">
-            <label for="email">Email Address:</label>
+            <label for="account_email">Email Address:</label>
             <br></br>
-            <input type="email" id="email" name="email" required>
+            <input type="account_email" id="account_email" name="account_email" required>
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="account_password">Password:</label>
             <br></br>
-            <input type="password" id="password" name="password" required>
+            <input type="account_password" id="account_password" name="account_password" required>
         </div>
         <p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</p>
         <button id="showpwd" type="">Show Password</button>

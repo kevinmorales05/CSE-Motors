@@ -15,12 +15,17 @@ router.post(
   accountController.registerAccount
 );
 
+// Process the login request
 router.post(
-    "/register",
-    regValidate.registationRules(),
-    regValidate.checkRegData,
-    //utilities.handleErrors(accountController.registerAccount)
-    accountController.registerAccount
-  );
+  "/login",
+  // regValidate.loginRules(),
+  // regValidate.checkLoginData,
+  // utilities.handleErrors(accountController.accountLogin)
+  accountController.accountLogin
+);
+//account management
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
+
+
 
 module.exports = router;
