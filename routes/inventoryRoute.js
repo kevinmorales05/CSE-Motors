@@ -19,6 +19,9 @@ inventoryController.addClassification);
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
 router.get("/edit/:inv_id", invController.editInventoryView);
 router.post("/update/", invController.updateInventory)
+//delete
+router.get("/delete/:inv_id", invController.deleteInventoryView);
+router.post("/delete/", invController.deleteInventory);
 
 
 module.exports = router;
