@@ -16,7 +16,8 @@ regValidate.addClassificationRules(),
 regValidate.checkRegData,
 inventoryController.addClassification);
 
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
+router.get("/edit/:inv_id", invController.editInventoryView);
 
 
 module.exports = router;
