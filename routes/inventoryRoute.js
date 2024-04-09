@@ -18,6 +18,7 @@ inventoryController.addClassification);
 
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
 router.get("/edit/:inv_id", invController.editInventoryView);
+router.post("/update/", invController.updateInventory)
 
 
 module.exports = router;

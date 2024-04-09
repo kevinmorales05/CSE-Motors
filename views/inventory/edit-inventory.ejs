@@ -7,7 +7,7 @@
 
 
 <div class="blockAddClass">';
-  <form class="blockAddClassForm" action="/inv/addVehicle" method="POST">
+  <form class="blockAddClassForm" action="/inv/update" method="POST">
     <label for="classification_id">Classification:</label>
     <%- classificationSelect %>
     <br><br />
@@ -39,4 +39,5 @@
     <input type="text" id="inv_color" name="inv_color" value="<%= inv_color %>" required><br>';
 
     <button type="submit">Edit vehicle</button>';
+    <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
   </form>';
